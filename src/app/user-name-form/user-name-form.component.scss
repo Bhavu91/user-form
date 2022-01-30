@@ -1,0 +1,13 @@
+.user-name-container{
+  width: calc(100% - 32px);
+  height: 100%;
+  padding: 16px;
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    mat-form-field{
+      width: 100%;
+    }
+  }
+}

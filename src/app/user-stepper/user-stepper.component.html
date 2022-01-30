@@ -1,0 +1,48 @@
+<div class="stepper-container">
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step>
+      <ng-template matStepLabel>Info</ng-template>
+      <p>Hey Its readonly page go ahead contnue</p>
+      <div>
+        <button mat-button matStepperNext>Continue</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="usernameForm">
+      <form [formGroup]="usernameForm">
+        <ng-template matStepLabel>User Details</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First name" formControlName="firstName" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last name" formControlName="lastName" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Github username</mat-label>
+          <input matInput placeholder="Github username" formControlName="gitHubUsername" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="mailDataForm" label="Mail Datails">
+      <form [formGroup]="mailDataForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email" required>
+        </mat-form-field>
+        <div [ngClass]="mailDataForm.get('acceptTerms').touched && mailDataForm.get('acceptTerms').hasError('required') ? 'invalid-checkbox' : ''">
+        <mat-checkbox color="primary" formControlName="acceptTerms">
+          Agree with terms and services
+        </mat-checkbox>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="onSubmit()">Submit</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

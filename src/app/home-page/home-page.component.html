@@ -1,0 +1,36 @@
+<div class="home-page-container">
+  <mat-card class="content-container">
+    <section class="content-wrapper">
+      <ng-container *ngIf="step === 0" [ngTemplateOutlet]="ReadOnlyPage">
+      </ng-container>
+      <ng-container *ngIf="step === 1">
+        <app-user-name-form [userForm]="userForm"></app-user-name-form>
+      </ng-container>
+      <ng-container *ngIf="step === 2">
+        <app-mail-form [userForm]="userForm"></app-mail-form>
+      </ng-container>
+    </section>
+
+    <footer class="nav-container">
+      <button mat-raised-button color="primary" *ngIf="step <2" (click)="navigateFurther()"
+              [disabled]="!!step && userForm.invalid">Next
+      </button>
+      <button mat-raised-button color="primary" *ngIf="step === 2" (click)="onSubmit()"
+              [disabled]="userForm.invalid">Submit
+      </button>
+      <button mat-raised-button color="primary" *ngIf="step" (click)="navigateBack()">Back</button>
+    </footer>
+  </mat-card>
+</div>
+
+<ng-template #ReadOnlyPage>
+
+    <div class="info-container">
+      <header>
+        <h2>Info</h2>
+      </header>
+      <hr>
+      <p>Content comes Here</p>
+    </div>
+
+</ng-template>

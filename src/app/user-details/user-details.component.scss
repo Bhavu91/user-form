@@ -1,0 +1,18 @@
+@import "../home-page/home-page.component";
+.home-page-container .content-container .content-wrapper{
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 16px 0;
+    height: 75px;
+    h2{
+      padding-left: 16px;
+    }
+    img {
+      max-width: 75px;
+      max-height: 75px;
+      border-radius: 50%;
+    }
+  }
+}

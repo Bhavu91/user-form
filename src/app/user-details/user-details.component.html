@@ -1,0 +1,11 @@
+<div class="home-page-container">
+  <mat-card class="content-container">
+    <section class="content-wrapper" *ngIf="user">
+      <header>
+        <img  alt='user-img' [src]="user?.avatar_url" />
+        <h2>Welcome {{user?.name}}</h2>
+      </header>
+      <hr>
+    </section>
+  </mat-card>
+</div>
