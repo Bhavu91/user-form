@@ -3,8 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomePageComponent} from './home-page/home-page.component';
 import {UserDetailsComponent} from './user-details/user-details.component';
 import {UserResolverService} from './service/user-resolver.service';
-import {UserNameFormComponent} from './user-name-form/user-name-form.component';
-import {MailFormComponent} from './mail-form/mail-form.component';
 
 const routes: Routes = [
   {
