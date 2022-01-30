@@ -13,6 +13,7 @@ import {MatButtonModule, MatCheckboxModule, MatCardModule, MatFormFieldModule, M
 import {UserService} from './service/user.service';
 import {UserResolverService} from './service/user-resolver.service';
 import {HttpClientModule} from '@angular/common/http';
+import {UserStepperComponent} from './user-stepper/user-stepper.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HttpClientModule} from '@angular/common/http';
     HomePageComponent,
     UserNameFormComponent,
     MailFormComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserStepperComponent
   ],
   imports: [
     BrowserModule,
