@@ -14,7 +14,7 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.data.subscribe(routeData => {
       if (routeData && routeData.userDetails) {
-        console.log('usr:' , routeData.userDetails);
+        this.user = {...routeData.userDetails};
         this.user = {...routeData.userDetails};
       }
     });

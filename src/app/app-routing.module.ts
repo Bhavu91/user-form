@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'home/user/:username',
+    path: 'home/:username',
     pathMatch: 'full',
     component: UserDetailsComponent,
     resolve: {

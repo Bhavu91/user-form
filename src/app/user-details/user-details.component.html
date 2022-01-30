@@ -3,9 +3,16 @@
     <section class="content-wrapper" *ngIf="user">
       <header>
         <img  alt='user-img' [src]="user?.avatar_url" />
-        <h2>Welcome {{user?.name}}</h2>
+        <div>
+          <h2>Welcome {{user?.name}}</h2>
+          <p>Followers: <b>{{user?.followers}}</b></p>
+        </div>
       </header>
       <hr>
+      <div class="data-wrapper">
+        <div class="content">Username: {{user?.login}}</div>
+        <div class="content">Bio: {{user?.bio}}</div>
+      </div>
     </section>
   </mat-card>
 </div>

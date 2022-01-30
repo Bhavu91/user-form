@@ -8,11 +8,26 @@
     height: 75px;
     h2{
       padding-left: 16px;
+      margin-bottom: 0;
     }
     img {
       max-width: 75px;
       max-height: 75px;
       border-radius: 50%;
+    }
+    p{
+      padding-left: 16px;
+      font-size: 12px;
+    }
+  }
+  .data-wrapper{
+    height: calc(100% - 85px);
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    .content{
+      margin: 12px;
     }
   }
 }
