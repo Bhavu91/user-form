@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('user-form-homeday');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render title in a header tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to user-form-homeday!');
+    expect(compiled.querySelector('h3').textContent).toContain('Homeday User Form');
   });
 });

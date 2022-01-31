@@ -12,7 +12,7 @@ export class UserDetailsComponent implements OnInit {
   user: any = {};
   userFormContent: any = {};
   constructor(private activatedRoute: ActivatedRoute,
-              private userForm: UserForm) { }
+              public userForm: UserForm) { }
 
   ngOnInit() {
     this.userFormContent = this.userForm.value;

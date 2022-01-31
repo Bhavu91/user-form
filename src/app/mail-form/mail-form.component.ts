@@ -10,7 +10,7 @@ import {UserForm} from '../service/user-form.service';
 })
 export class MailFormComponent implements OnInit, OnDestroy {
 
-  constructor( private router: Router,
+  constructor( public router: Router,
                public userForm: UserForm) { }
 
   ngOnInit() {
