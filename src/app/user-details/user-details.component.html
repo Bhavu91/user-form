@@ -10,8 +10,11 @@
       </header>
       <hr>
       <div class="data-wrapper">
-        <div class="content">Username: {{user?.login}}</div>
-        <div class="content">Bio: {{user?.bio}}</div>
+        <div class="content"><span class="content-text">Username:   </span>{{user?.login}}</div>
+        <div class="content"><span class="content-text">Firstname:  </span>{{userFormContent?.firstName}}</div>
+        <div class="content"><span class="content-text">Lastname:   </span>{{userFormContent?.lastName}}</div>
+        <div class="content"><span class="content-text">Email Id:   </span>{{userFormContent?.email}}</div>
+        <div class="content"><span class="content-text">Bio:  </span>{{user?.bio}}</div>
       </div>
     </section>
   </mat-card>

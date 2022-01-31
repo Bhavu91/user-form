@@ -1,5 +1,7 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {UserForm} from '../service/user-form.service';
 
 @Component({
   selector: 'app-mail-form',
@@ -8,8 +10,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class MailFormComponent implements OnInit, OnDestroy {
 
-  @Input()  userForm: FormGroup;
-  constructor() { }
+  constructor( private router: Router,
+               public userForm: UserForm) { }
 
   ngOnInit() {
     if (this.userForm && !this.userForm.get('email')) {
@@ -17,12 +19,23 @@ export class MailFormComponent implements OnInit, OnDestroy {
       this.userForm.addControl('acceptTerms', new FormControl(false, [Validators.requiredTrue]));
       this.userForm.updateValueAndValidity();
     }
+    if (this.userForm && !this.userForm.get('firstName')) {
+      this.router.navigate(['../home', 'step1']);
+    }
   }
 
   ngOnDestroy(): void {
     if (this.userForm.invalid) {
       this.userForm.removeControl('email');
       this.userForm.removeControl('acceptTerms');
+    }
+  }
+
+  onSubmit() {
+    // @ts-ignore
+    if (this.userForm && this.userForm.valid) {
+      console.log('userForm:', this.userForm.value);
+      this.router.navigate(['../home', this.userForm.get('gitHubUsername').value]);
     }
   }
 }

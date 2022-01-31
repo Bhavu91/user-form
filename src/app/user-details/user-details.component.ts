@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {UserForm} from '../service/user-form.service';
 
 @Component({
   selector: 'app-user-details',
@@ -9,12 +10,14 @@ import {ActivatedRoute} from '@angular/router';
 export class UserDetailsComponent implements OnInit {
 
   user: any = {};
-  constructor(private activatedRoute: ActivatedRoute) { }
+  userFormContent: any = {};
+  constructor(private activatedRoute: ActivatedRoute,
+              private userForm: UserForm) { }
 
   ngOnInit() {
+    this.userFormContent = this.userForm.value;
     this.activatedRoute.data.subscribe(routeData => {
       if (routeData && routeData.userDetails) {
-        this.user = {...routeData.userDetails};
         this.user = {...routeData.userDetails};
       }
     });

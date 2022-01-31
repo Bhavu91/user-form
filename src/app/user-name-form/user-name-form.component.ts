@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
+import {UserForm} from '../service/user-form.service';
 
 @Component({
   selector: 'app-user-name-form',
@@ -8,8 +9,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class UserNameFormComponent implements OnInit {
 
-  @Input()  userForm: FormGroup;
-  constructor() { }
+  constructor(public userForm: UserForm) { }
 
   ngOnInit() {
     if (this.userForm && !this.userForm.get('firstName')) {
@@ -19,5 +19,4 @@ export class UserNameFormComponent implements OnInit {
       this.userForm.updateValueAndValidity();
     }
   }
-
 }

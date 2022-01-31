@@ -1,20 +1,33 @@
-<div class="user-name-container">
-  <header>
-    <h3>User Details</h3>
-  </header>
-  <hr>
-  <form [formGroup]="userForm">
-    <mat-form-field appearance="outline">
-      <mat-label>First Name</mat-label>
-      <input matInput placeholder="First name" formControlName="firstName" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Last Name</mat-label>
-      <input matInput placeholder="Last name" formControlName="lastName" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Github username</mat-label>
-      <input matInput placeholder="Github username" formControlName="gitHubUsername" required>
-    </mat-form-field>
-  </form>
+<div class="home-page-container">
+  <mat-card class="content-container">
+    <section class="content-wrapper">
+      <div class="user-name-container">
+        <header>
+          <h3>User Details</h3>
+        </header>
+        <hr>
+        <form [formGroup]="userForm">
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First name" formControlName="firstName" required>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last name" formControlName="lastName" required>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Github username</mat-label>
+            <input matInput placeholder="Github username" formControlName="gitHubUsername" required>
+          </mat-form-field>
+        </form>
+      </div>
+    </section>
+
+    <footer class="nav-container">
+      <button mat-raised-button color="primary"  [routerLink]="'../step2'"
+              [disabled]="userForm.invalid">Next
+      </button>
+      <button mat-raised-button color="primary"  routerLink="/">Back</button>
+    </footer>
+  </mat-card>
 </div>

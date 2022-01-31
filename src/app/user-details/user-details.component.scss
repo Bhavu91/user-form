@@ -28,6 +28,9 @@
     flex-direction: column;
     .content{
       margin: 12px;
+      .content-text{
+        font-weight: 500;
+      }
     }
   }
 }

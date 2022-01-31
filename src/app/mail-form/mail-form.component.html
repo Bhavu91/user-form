@@ -1,17 +1,30 @@
-<div class="mail-detail-container">
-  <header>
-    <h2>Mail Details</h2>
-  </header>
-  <hr>
-  <form [formGroup]="userForm">
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Email" formControlName="email" required>
-    </mat-form-field>
-    <div [ngClass]="userForm.get('acceptTerms').touched && userForm.get('acceptTerms').hasError('required') ? 'invalid-checkbox' : ''">
-      <mat-checkbox color="primary" formControlName="acceptTerms">
-        Agree with terms and services
-      </mat-checkbox>
-    </div>
-  </form>
+<div class="home-page-container">
+  <mat-card class="content-container">
+    <section class="content-wrapper">
+      <div class="mail-detail-container">
+        <header>
+          <h2>Mail Details</h2>
+        </header>
+        <hr>
+        <form [formGroup]="userForm">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" required>
+          </mat-form-field>
+          <div [ngClass]="userForm.get('acceptTerms').touched && userForm.get('acceptTerms').hasError('required') ? 'invalid-checkbox' : ''">
+            <mat-checkbox color="primary" formControlName="acceptTerms">
+              Agree with terms and services
+            </mat-checkbox>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="nav-container">
+      <button mat-raised-button color="primary" (click)="onSubmit()"
+              [disabled]="userForm.invalid">Submit
+      </button>
+      <button mat-raised-button color="primary" [routerLink]="'../step1'">Back</button>
+    </footer>
+  </mat-card>
 </div>

@@ -13,6 +13,7 @@ import {MatButtonModule, MatCheckboxModule, MatCardModule, MatFormFieldModule, M
 import {UserService} from './service/user.service';
 import {UserResolverService} from './service/user-resolver.service';
 import {HttpClientModule} from '@angular/common/http';
+import {UserForm} from './service/user-form.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import {HttpClientModule} from '@angular/common/http';
     MatCheckboxModule,
     MatCardModule
   ],
-  providers: [UserService, UserResolverService],
+  providers: [UserService, UserResolverService, UserForm],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
